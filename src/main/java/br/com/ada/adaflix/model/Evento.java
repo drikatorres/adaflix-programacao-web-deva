@@ -1,14 +1,14 @@
 package br.com.ada.adaflix.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 import java.time.LocalDateTime;
 
 @Entity
-
+@Table(name = "evento")
 public class Evento {
     @Id
+    @GeneratedValue (strategy = GenerationType.IDENTITY)
     private Long id;
     private String cnpj;
     private String empresa;

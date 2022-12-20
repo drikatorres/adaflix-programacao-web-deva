@@ -14,9 +14,9 @@ public class AdaflixApplication {
 		SpringApplication.run(AdaflixApplication.class, args);
 	}
 
-	@RequestMapping("/v1/hello-world")
+	/*@RequestMapping("/v1/hello-world")
 	@ResponseBody
 	String home() {
-		return "Hello World, Drika!! =)";
-	}
+		return "Hello World!! =)";
+	} */
 }
