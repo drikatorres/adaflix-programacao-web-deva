@@ -21,12 +21,12 @@ public class EventoController {
         return evento;
     }
 
-    @GetMapping
+    @GetMapping("/eventos")
     public List<Evento> listar() {
         return eventoService.listar();
     }
 
-    @GetMapping("/{id}")
+    @GetMapping("/eventos/{id}")
     public Evento buscarPorId(@PathVariable Long id) {
         return eventoService.buscarPorId(id);
     }

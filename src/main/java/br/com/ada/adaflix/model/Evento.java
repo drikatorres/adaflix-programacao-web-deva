@@ -11,7 +11,6 @@ public class Evento {
     @GeneratedValue (strategy = GenerationType.IDENTITY)
     private Long id;
     private String cnpj;
-    private String empresa;
     private String nome;
     private String descricao;
     private LocalDateTime data_hora;
@@ -19,7 +18,11 @@ public class Evento {
     private Double preco;
     private Long capacidade;
     private LocalDateTime inicioVendas;
+    @Column (name = "encerramento")
     private LocalDateTime fimVendas;
+    @ManyToOne
+    @JoinColumn(name = "empresa_id")
+    private Empresa empresa;
 
     public Long getId() {
         return id;
@@ -35,14 +38,6 @@ public class Evento {
 
     public void setCnpj(String cnpj) {
         this.cnpj = cnpj;
-    }
-
-    public String getEmpresa() {
-        return empresa;
-    }
-
-    public void setEmpresa(String empresa) {
-        this.empresa = empresa;
     }
 
     public String getNome() {
@@ -107,5 +102,13 @@ public class Evento {
 
     public void setFimVendas(LocalDateTime fimVendas) {
         this.fimVendas = fimVendas;
+    }
+
+    public Empresa getEmpresa() {
+        return empresa;
+    }
+
+    public void setEmpresa(Empresa empresa) {
+        this.empresa = empresa;
     }
 }
